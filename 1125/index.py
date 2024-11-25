@@ -112,10 +112,10 @@ for row in matrix:
             print(element, end = " ")
 
 
-# 실습. 이중 for문 구구단 만들기
+# 실습. 이중 for문 구구단 만들기 / 이중 for문 가장 심플한 예제
 
 for i in range(2,10):
-    print(f"{i}단")
+    print(f"[{i}단]")
     for j in range(1,10):
         print(f"{i} x {j} = {i*j}")
     print()
@@ -123,7 +123,7 @@ for i in range(2,10):
 """
 # 자판기 프로그램
 
-vending_machine = ['게토레이', '게토레이', '레쓰비', '레쓰비', '생수', '생수', '이프로']
+vending_machine = ['게토레이', '게토레이', '레쓰비', '레쓰비', '생수', '생수', '생수', '이프로']
 
 while True:
     print("남은 음료수 : ", vending_machine)
@@ -133,7 +133,7 @@ while True:
 
     if user == "소비자" or user == "1":
         drink = input("마시고 싶은 음료를 고르시오. : ")
-        if drink in vending_machine:
+        if drink in vending_machine: # 있으면 제거
             vending_machine.remove(drink)
             print(f"{drink} 드릴게요.")
             
@@ -143,20 +143,33 @@ while True:
 
     elif user == "사용자" or user == "2": # elif대신 if를 쓰는바람에 else가 계속 실행되었다. 주의하자.
         user_input = input("추가 or 삭제 선택 : ")
+
         if user_input == "추가":
             add_drink = input("추가할 음료수 입력 : ")
             vending_machine.append(add_drink)
             vending_machine.sort()
-        if user_input == "삭제":
-            rem_drink = input("삭제할 음료 입력 : ")
-            if rem_drink not in vending_machine:
-                print("없음")
+
+        elif user_input == "삭제":
+            rm_drink = input("삭제할 음료 입력 : ")
+
+            if rm_drink not in vending_machine:
+                print(f"{rm_drink}는 현재 없습니다.")
         
-            vending_machine.remove(rem_drink)
+            vending_machine.remove(rm_drink)
+            print(f"{rm_drink} 삭제 완료")
+        else:
+            print("값을 잘못입력하셨습니다.")
 
     elif user == "나가기" or user == "3":
+        print("자판기 프로그램을 종료합니다.")
         break
 
     else:
         print("잘못입력하셨습니다.")
         print()
+
+
+"""
+if문 조건 만들고 pass처리 하면서 큰 틀을 먼저 만든다.
+나가기(break)와 else 만들기.
+"""
