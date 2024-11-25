@@ -87,35 +87,33 @@ def times(nums):
 number = [2 ,3 ,6 ,9 ]
 print(times(number))
 # 새로운 리스트로 전달된다.
-"""
+
 
 # 실습3. 자판기 프로그램 함수화
 # 중복된 코드를 함수화 하는 것이다.
 vending_machine = ['게토레이', '게토레이', '레쓰비', '레쓰비', '생수', '생수', '생수', '이프로']
 
+
 def check_machine():
-    print("남은 음료수 : ", vending_machine)
+    return print("남은 음료수 : ", vending_machine)
+
 
 def is_drink(drink):
     return drink in vending_machine
 
 
-def add_drink(user_input):
-    add_drink = input("추가할 음료수 입력 : ")
-    vending_machine.sort() # 오름차순 정렬
-    vending_machine.append(add_drink)
-    return vending_machine
+def add_drink(drink):
+    vending_machine.append(drink)
+    vending_machine.sort()
 
-def remove_drink(user_input):
-    drink = input("삭제할 음료 입력 : ")
 
-    if is_drink(drink):
-        print(f"{drink}는 현재 없습니다.")
-        
-    vending_machine.remove(drink)
-    print(f"{drink} 삭제 완료")
-
-    return vending_machine
+def remove_drink(drink):
+    if user == "소비자" or user == "1":
+        vending_machine.remove(drink)
+        print(f"{drink} 드릴게요.")
+    else:
+        vending_machine.remove(drink)
+        print(f"{drink} 삭제 완료")
 
 
 while True:
@@ -124,27 +122,28 @@ while True:
 
     user = input("사용자 종류를 입력하세요.\n 1. 소비자\n 2. 사용자\n 3. 나가기\n ")
 
-
     if user == "소비자" or user == "1":
         drink = input("마시고 싶은 음료를 고르시오. : ")
-
-        if is_drink(drink): # 있으면 제거
-            vending_machine.remove(drink)
-            print(f"{drink} 드릴게요.")
-            
+        if is_drink(drink):  # 있으면 제거
+            remove_drink(drink)
 
         else:
             print("없음")
 
-    elif user == "사용자" or user == "2": # elif대신 if를 쓰는바람에 else가 계속 실행되었다. 주의하자.
+    elif user == "사용자" or user == "2":
         user_input = input("추가 or 삭제 선택 : ")
 
-        add_drink(user_input)
         if user_input == "추가":
-            add_drink(user_input)
+            drink = input("추가할 음료수 입력 : ")
+            add_drink(drink)
 
         elif user_input == "삭제":
-            remove_drink(user_input)
+            drink = input("삭제할 음료 입력 : ")
+
+            if is_drink(drink):
+                print(f"{drink}는 현재 없습니다.")
+
+            remove_drink(drink)
 
         else:
             print("값을 잘못입력하셨습니다.")
@@ -156,3 +155,4 @@ while True:
     else:
         print("잘못입력하셨습니다.")
         print()
+"""
