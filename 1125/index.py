@@ -147,7 +147,7 @@ while True:
         if user_input == "추가":
             add_drink = input("추가할 음료수 입력 : ")
             vending_machine.append(add_drink)
-            vending_machine.sort()
+            vending_machine.sort() # 오름차순 정렬
 
         elif user_input == "삭제":
             rm_drink = input("삭제할 음료 입력 : ")
