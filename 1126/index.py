@@ -273,60 +273,73 @@ weather_data = [
     ["2024-11-22", "서울", 8.3, 0.0],
     ["2024-11-22", "부산", 12.0, 0.0]
 ]
+five1 = ["날씨", "도시", "평균 기온", "강수량"]
+five2 = []
 
 # 평균
-"""
-filter_city = list(filter(lambda x: x[1] == "서울", weather_data))
-total = 0
-for i in range(3):
-    total += filter_city[i][2]
-avg = total / 3
-print(avg)
-"""
 
-
-
-
+def data(i):
+    return weather_data[i]
+def data2():
+    filter_city = list(filter(lambda x: x[1] == city, weather_data))
 
 while True:
     print("[날씨 데이터 분석 프로그램]\n")
-    print("1. 평균 기온 계산\n2. 최고/최저 기온 찾기\n3. 강수량 분석\n4. 날씨데이터 추가\n5. 전체 데이터 출력\n6. 종료")
+    print("1. 평균 기온 계산\n2. 최고/최저 기온 찾기\n3. 강수량 분석\n4. 날씨데이터 추가\n5. 전체 데이터 출력\n6. 종료(임유빈)")
     number = int(input("원하는 기능의 번호를 입력하세요. : "))
-    city = input("도시 이름을 입력하세요: ")
 
+    if number == 6:
+        print("프로그램을 종료합니다.")
+        break
 
-    if number == 1:
-        if city == "서울":
-            filter_city = list(filter(lambda x: x[1] == "서울", weather_data))
-            total = 0
-            for i in range(3):
-                total += filter_city[i][2]
-            avg = total / 3
-            print(f"서울의 평균기온 : {avg:.2f}")
-        elif city == "부산":
-            filter_city = list(filter(lambda x: x[1] == "부산", weather_data))
-            total = 0
-            for i in range(3):
-                total += filter_city[i][2]
-            avg = total / 3
-            print(f"서울의 평균기온 : {avg:.2f}")
+    elif number == 1:
+        city = input("도시 이름을 입력하세요: ")    
+        filter_city = list(filter(lambda x: x[1] == city, weather_data))
+        total = 0
+        for i in range(len(filter_city)):
+            total += filter_city[i][2]
+        avg = total / len(filter_city)
+        print(f"{city}의 평균기온 : {avg:.2f}°C")
+        print()
+
     
     elif number == 2:
-        if city == "서울":
-            filter_city = list(filter(lambda x: x[1] == "서울", weather_data))
-            for i in range(len(filter_city)):
-                temp_list = list(filter_city[i][2])
-                
-            max_temp = max(temp_list)
-            print(max_temp)
-           
-        elif city == "부산":
-            filter_city = list(filter(lambda x: x[1] == "부산", weather_data))
-            for i in range(len(filter_city)):
-                temp_list = list(filter_city[i][2])
-            max_temp = max(temp_list)
-            print(max_temp)
-                  
+        city = input("도시 이름을 입력하세요: ")    
+        filter_city = list(filter(lambda x: x[1] == city, weather_data)) # 최고/최저 기온 찾기
+        temp_list = []
+        for i in range(len(filter_city)):
+            temp_list.append(filter_city[i][2])
+        max_temp = max(temp_list)
+        print(max_temp)
+        print()
+    
+    elif number == 3:
+        city = input("도시 이름을 입력하세요: ")    
+        filter_city = list(filter(lambda x: x[1] == city, weather_data)) # 강수량 분석
+        rain_list = []
+        for i in range(len(filter_city)):
+            rain_list.append(filter_city[i][3])
+        total_rain = sum(rain_list)
+        print(f"{city}의 총 강수량은 {total_rain}mm")
+        print()
+    
+    elif number == 4: # 날씨 데이터 추가
+        date = input("날짜를 입력하세요 (YYYY-MM-DD): ")
+        city = input("도시를 입력하세요: ")
+        temp = input("평균 기온을 입력하세요 (°C): ")
+        rain = input("강수량을 입력하세요 (mm): ")
+        weather_data.append([date, city, temp, rain])
+        print(f"{city}의 날씨 데이터가 추가되었습니다.")
+        print()
+
+    elif number == 5: # 전체 데이터 출력
+        for i in range(len(weather_data)):
+            print(f"날씨 : {weather_data[i][0]}, 도시 : {weather_data[i][1]}, 평균 기온 : {weather_data[i][2]}, 강수량 : {weather_data[i][3]}")
+        print()
+    
+
+               
+            
 
 
 
