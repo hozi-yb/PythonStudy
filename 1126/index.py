@@ -274,8 +274,6 @@ weather_data = [
     ["2024-11-22", "부산", 12.0, 0.0]
 ]
 
-# 평균
-
 def data(i):
     return weather_data[i]
 def data2():
