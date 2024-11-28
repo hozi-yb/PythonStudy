@@ -212,28 +212,36 @@ class Health():
         
     def setname(self,name):
         self._name = name
+
     def getname(self):
         return self._name
+    
     def sethp(self, hp):
         self._hp = hp
+
     def gethp(self):
         return self._hp
+    
     def hp_sys(self, workout, drink):
         self._hp += workout
         self._hp -= drink
         print(f"{workout}시간 운동하다.")
         print(f"술을 {drink}잔 마시다.")
+        
+    def status(self,user):
+        print(f"{user.getname()} - hp : {user.gethp()}")
+        print("=====================================")                
 
 p1 = Health()
 p1.setname("나몸짱")
 p1.sethp(90)
 p1.hp_sys(5,2)
-print(f"{p1.getname()} - hp : {p1.gethp()}")
-print("=====================================")
+p1.status(p1)
+
 p2 = Health()
 p2.setname("나약해")
 p2.sethp(55)
 p2.hp_sys(1,15)
-print(f"{p2.getname()} - hp : {p2.gethp()}")
+p2.status(p2)
 
 
