@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>안녕하세요</div>
+    <div>Hello Html</div>
+    <div>Html 태그 연습</div>
+    <div>div는 하나하나가 영역이다.</div>
+    <div>
+        <span>빨강색</span>
+        <span>주황색</span>
+        <span>노랑색</span>
+        <span>은 div안에서 span하나하나가 영역</span>
+    </div>
+    <h1>제목1</h1>
+    <h2>제목2</h2>
+    <h3>제목3</h3>
+    <h4>제목4</h4>
+    <h5>제목5</h5>
+    <h6>제목6</h6>
+    <p>p태그는 장문의 글을 쓸 때 사용하는 태그 (문장)</p>
+    <ul>
+        <li>사과</li>
+        <li>바나나</li>
+        <li>포도</li>
+        <li>순서없음</li>
+    </ul>
+    <ol>
+        <li>한국</li>
+        <li>일본</li>
+        <li>중국</li>
+        <li>순서있음</li>
+    </ol>
+    <img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fdiscovercrop-phinf.pstatic.net%2F%2FMjAyNDEyMDFfMTg1%2FMDAxNzMyOTg2NjE2NTg2.t_Een8o59aFUuMJi0wFtgUNfS4xqLAIPM3T3ca7KRuYg.mnK2ZOGCcWT8fUOKJvc9Bbi7djgQUKDbsjBMZ_wFec0g.JPEG%2Fimage_750x420.jpg%22&type=nf365_240&service=navermain" />
+    <a href="https://www.naver.com" target="_blank">네이버로이동</a>
+    <br>target ="_blank" 는 새 페이지로 이동
+    <div>
+         <input type="text" placeholder="입력하세요" />
+    </div>
+    <div>
+         <input type="button" value="클릭" />
+    </div>
+    <div>
+        <input type="password" />
+    </div>
+    <div>
+        <input type="checkbox" /> 1
+        <input type="checkbox" /> 2
+        <input type="checkbox" /> 3
+        <input type="checkbox" /> 4
+        <input type="checkbox" /> 5
+    </div>
+    <div>
+        <input type="radio" name="a" /> a
+        <input type="radio" name="b" /> b
+        <input type="radio" name="c" /> c
+    </div>  
+    <div>
+        <input type="date"/>
+        <input type="time"/>
+    </div>
+    <div>
+        <select>
+            <option value=""> 대한민국</option>
+            <option value=""> 일본</option>
+            <option value=""> 중국</option>
+        </select>
+    </div>
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>제목</th>
+                    <th>이름</th>
+                    <th>나이</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>파이썬</td>
+                    <td>홍길동</td>
+                    <td>20</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <header>헤드(메뉴 및 로고 등등)<nav>메뉴들</nav></header>
+    <section>하나의 구역</section>
+    <footer>사이트의 정보</footer>
+
+</body> -->
+    <head>
+
+    </head>
+    <body>
+        <!-- <div>
+            <ul>
+                <li>사과</li>
+                <li>딸기</li>
+                <li id="orange" class="orange">오렌지</li>
+                <li>망고</li>
+                <li>수박</li>
+                id는 하나만 있어야한다. 유효값
+            </ul>
+            <div>당근</div>
+            <p>토마토</p>
+            <span class="orange">오렌지</span>
+                
+        </div> -->
+        <div class="fruits">
+            <span>딸기</span>
+            <span>수박</span>
+            <span>오렌지</span>
+            <p>망고</p>
+            <h3>사과</h3>
+        </div>
+        <input type="text" value="한국">
+        <input type="text" value="일본" readonly>
+        <input type="text" value="중국" disabled>
+        <input type="password">
+    
+        <script>
+            const li = document.querySelectorAll(".fruits")
+            // class는 .으로 불러오고 id는 #으로 불러온다
+            console.log(li);
+        </script>
+
+
+    </body>
+</html>
