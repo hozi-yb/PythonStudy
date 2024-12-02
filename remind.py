@@ -4,3 +4,4 @@ weight = 75.579
 
 info = list([name, age, weight])
 print(info)
+# 메인에서
