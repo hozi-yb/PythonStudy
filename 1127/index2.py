@@ -205,10 +205,9 @@ print(p1.getname()) # get으로 정보 가져오기.
 # 정보 은닉을 이용해서.
 
 class Health():
-    def __init__(self):
-        self._name = ""
+    def __init__(self, name):
+        self._name = name
         self._hp = 100
-        1 < self._hp <= 100
         
     def setname(self,name):
         self._name = name
@@ -219,27 +218,33 @@ class Health():
     def sethp(self, hp):
         self._hp = hp
 
+
+
     def gethp(self):
         return self._hp
     
     def hp_sys(self, workout, drink):
         self._hp += workout
         self._hp -= drink
-        print(f"{workout}시간 운동하다.")
+
+        if self._hp >= 100:
+            self._hp = 100
+
+        print(f"{workout}시간 운동하다.") # 오류 가능성 있으니, 따로 def설정하는것이 좋다.
         print(f"술을 {drink}잔 마시다.")
-        
+
     def status(self,user):
         print(f"{user.getname()} - hp : {user.gethp()}")
         print("=====================================")                
 
-p1 = Health()
-p1.setname("나몸짱")
-p1.sethp(90)
+p1 = Health("나몸짱")
+
+p1.sethp(100)
 p1.hp_sys(5,2)
 p1.status(p1)
 
-p2 = Health()
-p2.setname("나약해")
+p2 = Health("나약해")
+
 p2.sethp(55)
 p2.hp_sys(1,15)
 p2.status(p2)
