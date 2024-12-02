@@ -1,0 +1,94 @@
+# 실습. 로또 번호뽀기
+
+import time
+import json
+import os
+import sys
+import random
+
+lotto = random.sample(range(1, 46), 6)
+
+print(sorted(lotto))
+
+# lotto = set()
+
+# while len(lotto) < 6:
+#     lotto.add(random.randint(1, 45))
+
+# print(sorted(lotto))
+
+
+# print(sys.argv)
+# print(sys.argv[1:])
+
+if "-h" in sys.argv or "--help" in sys.argv:
+    print("사용법: python main.py [옵션]")
+    print("-h, --help     도움말표시")
+    print("-v, --version  버전정보표시")
+    sys.exit(0)
+
+if "-v" in sys.argv or "--version" in sys.argv:
+    print("버전 : 1.0.0")
+    sys.exit(0)
+
+
+# dir_current = os.getcwd()
+# print(dir_current)
+# file_path = os.chdir(dir_current)
+# dir = os.popen('ls')
+# print(dir.read())
+# os.mkdir("test")
+# os.rmdir("test")
+print(os.environ.get('PATH'))
+
+
+data = {
+    "name": "홍길동",
+    "age": 20,
+    "city": "서울"
+}
+json_str = json.dumps(data)
+print(json_str)
+
+json_obj = json.loads(json_str)
+print(json_obj, json_obj['name'])
+
+
+# 실습. 타자연습
+
+words = ["mountain", "river", "forest", "ocean", "desert",
+         "tree", "flower", "cloud", "rain", "sunlight"]
+
+
+def game():
+    print("영어 타자 연습 게임")
+    print("게임종료를 원하시면 exit를 입력하세요")
+
+    total_words = 0
+    start_time = time.time()
+
+    while True:
+        word = random.choice(words)
+        print(f"단어: {word}")
+
+        while True:
+            user_input = input("입력: ")
+
+            if user_input == "exit":
+                end_time = time.time()
+                total_time = end_time - start_time
+                print("\n게임종료")
+                print(f"총입력한 단어는 {total_words}개입니다.")
+                print(f"총걸린 시간은 {total_time:.2f}초")
+                print(f"단어당 평균시간은 {total_time / total_words:.2f}초")
+                return
+
+            if user_input == word:
+                print("통과")
+                total_words += 1
+                break
+            else:
+                print("오타! 다시입력")
+
+
+game()
