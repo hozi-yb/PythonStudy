@@ -28,7 +28,7 @@ abc : 태그 이름이 abc인 요소 선택 ex> li
 - 일반 형제 선택자
 
 형태 - 복합선택자
-abc.xyz : 선택자 abc와 xyz를 동시에 만족하는 요소 선택
+abc.xyz : 선택자 abc와 xyz를 동시에 만족하는 요소 선택 / 같은 라인에 있을 때.
 abc>xyz : 선택자 abc의 자식요소인 xyz를 선택
 abc .xyz : 선택자 abc의 하위 요소 xyz 선택. 띄어쓰기가 선택자의 기호이다.
 abc+xyz : 선택자 abc의 다음 형제 요소 xyz 하나를 선택
