@@ -1,0 +1,24 @@
+beautifulsoup
+HTML과 XML 문서를 파싱하기 위한 파이썬 라이브러리
+웹서버로부터 ?HTML소스를 가져온 후 파싱(parsing)을 통해 소스코드를 해석해야한다.
+soup = beautifulsoup(html, 'html.parser')
+
+beautifulsoup설치
+pip install beautifulsoup4
+
+beautifulsoup 사용
+from bs4 import beautifulsoup
+import를 통해서 사용한다.
+
+find()
+soup.find(태그) : 처음 나오는 태그로 찾기
+soup.find_all(태그) : 태그에 해당하는 모든거
+soup.fine(태그, attrs={'class':어쩌구}) : 태그에 해당하는 선택자로 찾기
+
+select()
+soup.select_one(태그요소.선택자이름) : 하나 가져옴
+soup.select(태그요소.선택자) :다가져옴
+{tag}.get_text() : 해당 태그의 텍스트 가져옴
+
+robots.txt
+데이터크롤링 주의사항

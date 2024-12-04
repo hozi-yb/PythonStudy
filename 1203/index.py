@@ -165,6 +165,19 @@ today = [i.text.strip() for i in rate_today]
 for i in today:
     print(i, end = "\n")
 
+# print()
+# # print(today)
+# # rate_name = soup.select(.rate_info table sptxt)
+# # [i.text.strip() for i in rate_name]
+# rt_name = ["전일", "고가", "상한가", "거래량", "시가", "저가", "하한가", "거래대금" ]
+# # print(rt_name)
+# rate_info = soup.select(".rate_info table .blind")
+# rt_info = [i.text.strip() for i in rate_info]
+# # print(rt_info)
+# zipped = list(zip(rt_name, rt_info))
+# for rt_name, rt_info in zipped:
+#     print(f"{rt_name} {rt_info}")
+# print("백만")
 
 rate_info = soup.select(".rate_info table span:not(.blind)")
 info = [i.text.strip() for i in rate_info]
