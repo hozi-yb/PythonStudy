@@ -34,7 +34,6 @@ scores = [85, 90, 88, 95]
 zipped = list(zip(names, scores))
 print(zipped)
 
-"""
 # 실습. elif
 score = int(input("점수를 입려하세요: "))
 if score >= 90:
@@ -152,21 +151,21 @@ while count < 10:
         continue
     print(count, end=" ")
 
+"""
 # 실습. while문 사용하기
 while True:
     user_input = input("양수를 입력하세요.('종료'입력시 프로그램 종료): ")
+    if not user_input.isdigit():
+        print("양수를 입력하세요")
+        continue
     if user_input == "종료":
         print("프로그램을 종료합니다")
         break
 
-    if not user_input.isdigit():
-        print("양수를 입력하세요")
-        continue
-
-    number = int(user_input)
     if number == 0:
         continue
 
+    number = int(user_input)
     total = 0
     num = 1
     while num <= number:
