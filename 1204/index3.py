@@ -85,8 +85,7 @@ time.sleep(5)
 search = driver.find_element(By.XPATH, '//*[@id="textInput"]')
 search.send_keys("삿포로")
 time.sleep(5)
-sapporo = driver.find_element(
-    By.XPATH, '//*[@id="SearchBoxContainer"]/div[1]/div/div[2]/div/div/div[6]/ul/div/ul/li[1]')
+sapporo = driver.find_element(By.XPATH, '//*[@id="SearchBoxContainer"]/div[1]/div/div[2]/div/div/div[6]/ul/div/ul/li[1]')
 
 time.sleep(3)
 sapporo.click()
@@ -94,15 +93,12 @@ sapporo.click()
 time.sleep(5)
 # day_start = driver.find_element(By.XPATH, '//*[@id="check-in-box"]/div')
 # day_start.click()
-day__1206 = driver.find_element(
-    By.XPATH, '//*[@id="DatePicker__Accessible"]/div/div[2]/div[1]/div[3]/div[2]/div[5]/div')
+day__1206 = driver.find_element(By.XPATH, '//*[@id="DatePicker__Accessible"]/div/div[2]/div[1]/div[3]/div[2]/div[5]/div')
 day__1206.click()
-day__1208 = driver.find_element(
-    By.XPATH, '//*[@id="DatePicker__Accessible"]/div/div[2]/div[1]/div[3]/div[2]/div[7]/div')
+day__1208 = driver.find_element(By.XPATH, '//*[@id="DatePicker__Accessible"]/div/div[2]/div[1]/div[3]/div[2]/div[7]/div')
 day__1208.click()
 
-search_botton = driver.find_element(
-    By.XPATH, '//*[@id="Tabs-Container"]/button')
+search_botton = driver.find_element(By.XPATH, '//*[@id="Tabs-Container"]/button')
 time.sleep(1)
 search_botton.click()
 
@@ -111,12 +107,10 @@ time.sleep(5)
 #     By.XPATH, '//*[@id="contentContainer"]/div[4]/ol[1]/li[1]/div/a/div/div')
 
 
-hotel_name = driver.find_element(
-    By.XPATH, '//*[@id="contentContainer"]/div[4]/ol[1]/li[1]/div/div/div/div/div[2]/div/header/div[1]/a/span').text
-hotel_cost = driver.find_element(
-    By.XPATH, '//*[@id="contentContainer"]/div[4]/ol[1]/li[1]/div/div/div/div/div[3]/div/div[2]/aside[2]/ul/li[2]/div/div/div/span[3]').text
+hotel_name = driver.find_element(By.XPATH, '//*[@id="contentContainer"]/div[4]/ol[2]/li[2]/div/div/div/div/div/div[2]/div/header/div[1]/a/span').text
+hotel_cost = driver.find_element(By.XPATH, '//*[@id="contentContainer"]/div[4]/ol[2]/li[2]/div/div/div/div/div/div[3]/div/div[2]/aside[2]/ul/li[2]/div/div/div/span[3]').text
 print(f"호텔 : {hotel_name}")
-print(f"호텔 가격 : {hotel_cost}")
+print(f"호텔 가격 : {hotel_cost}원")
 
 
 input("대기")
