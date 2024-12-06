@@ -17,7 +17,7 @@ options = Options()
 service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service, options=options)
 
-#EC 메서드
+# EC 메서드
 # EC.title_is("문자열") # 현재 페이지 제목이 지정된 문자열과 일치할 때
 # EC.title_contains("문자열") # 현재 페이지 제목에 문자열이 포함될 때
 # EC.presence_of_all_elements_located((By.ID, "아이디값")) # By.ID는 예시,,, 아이디값의 DOM이 존재할 때 ( 화면표시 안되어도 됨. )
@@ -37,7 +37,8 @@ click_search = search.click()
 search_sapporo = search.send_keys("삿포로")
 
 clickin = WebDriverWait(driver, 10).until(
-    EC.element_to_be_clickable((By.CSS_SELECTOR, '.Suggestion Suggestion__categoryName'))
+    EC.visibility_of_element_located(
+        (By.CSS_SELECTOR, '.Suggestion'))
 )
 
 clickin.click()
@@ -46,12 +47,14 @@ clickin.click()
 # sapporo = driver.find_element(By.XPATH, '//*[@id="SearchBoxContainer"]/div[1]/div/div[2]/div/div/div[6]/div/div/ul/li[1]').click()
 
 checkin_day = WebDriverWait(driver, 10).until(
-    EC.element_to_be_clickable((By.XPATH, '//*[@id="DatePicker__Accessible"]/div/div[2]/div[1]/div[3]/div[2]/div[5]'))
+    EC.element_to_be_clickable(
+        (By.XPATH, '//*[@id="DatePicker__Accessible"]/div/div[2]/div[1]/div[3]/div[2]/div[5]'))
 )
 checkin_day.click()
 
 checkout_day = WebDriverWait(driver, 10).until(
-    EC.element_to_be_clickable((By.XPATH, '//*[@id="DatePicker__Accessible"]/div/div[2]/div[1]/div[3]/div[2]/div[6]'))
+    EC.element_to_be_clickable(
+        (By.XPATH, '//*[@id="DatePicker__Accessible"]/div/div[2]/div[1]/div[3]/div[2]/div[6]'))
 )
 checkout_day.click()
 
@@ -68,12 +71,14 @@ driver.switch_to.window(driver.window_handles[-1])
 
 time.sleep(10)
 hotels = WebDriverWait(driver, 10).until(
-    EC.presence_of_all_elements_located((By.CSS_SELECTOR, '.hotel-list-container h3'))
+    EC.presence_of_all_elements_located(
+        (By.CSS_SELECTOR, '.hotel-list-container h3'))
 )
 
 # hotels = driver.find_elements(By.CSS_SELECTOR, '.hotel-list-container h3')
 price = WebDriverWait(driver, 10).until(
-    EC.presence_of_all_elements_located((By.CSS_SELECTOR, '.hotel-list-container .PropertyCardPrice__Value'))
+    EC.presence_of_all_elements_located(
+        (By.CSS_SELECTOR, '.hotel-list-container .PropertyCardPrice__Value'))
 )
 # price = driver.find_elements(By.CSS_SELECTOR, '.hotel-list-container .PropertyCardPrice__Value')
 
