@@ -122,7 +122,7 @@ plt.show()
 categories = ['A', 'B', 'C']
 values = [10, 15, 7]
 
-bars = plt.barh(categories, values, color='skyblue', edgecolor='red')
+bars = plt.barh(categories, values, color='skyblue', edgecolor='red', )
 
 for bar in bars:
     plt.text(bar.get_width() + 0.5,# x좌표
@@ -130,7 +130,14 @@ for bar in bars:
              str(bar.get_width()),
              ha = 'right', va = 'center', color = 'green') # y좌표(막대중심)
 
+plt.legend(bars, ['A-2023', 'B-2024', 'C-2025'], ncol = 3 )
+# 기준선
+plt.axvline(x=values[2], linestyle=':')
+
 plt.title('막대그래프 연습', pad=20)
 plt.xlabel('카테고리')
 plt.ylabel('수치')
-plt.show()
+# plt.show() 창띄우기
+
+#저장
+plt.savefig("./1209/graph.jpg", format='jpg') # 여기서만 쓰는게 아니라 여러곳에서 쓸 수 있다.
