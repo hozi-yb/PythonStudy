@@ -9,10 +9,10 @@ font = font_manager.FontProperties(fname=path).get_name()
 plt.rc('font', family=font)
 
 # print(sns.get_dataset_names())
-import matplotlib.pyplot as plt
+
 
 # 예제 데이터
-tips = sns.load_dataset('tips')
+# tips = sns.load_dataset('tips')
 # print(tips.head())
 
 # 산점도
@@ -128,6 +128,12 @@ titanic = sns.load_dataset('titanic')
 #     y = 'survived',
 #     data=titanic,
 #     kind='bar'
+# )
+# sns.catplot(
+#     x = 'class',
+#     hue = 'survived',
+#     data=titanic,
+#     kind='count' # 얘는 hue가 같이와야된다.
 # )
 
 sns.kdeplot(
