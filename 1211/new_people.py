@@ -73,3 +73,5 @@ male_result = region_data[man_columns].iloc[0].astype(str).str.replace(",", "").
 '''
 
 ### apply() : 사용자 함수 정의 어플라이 안에 람다함수쓰면 된다.
+
+#######행안부 사이트 csv나 공공데이터를 가지고 연습을 많이 해보자.
