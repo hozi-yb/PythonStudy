@@ -255,7 +255,7 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 """
 
-
+"""
 ## 실습문제
 
 import cv2
@@ -294,3 +294,5 @@ print(f"검출된 초록색 물체 개수 : {count}")
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
+"""
