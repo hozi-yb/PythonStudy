@@ -1,5 +1,5 @@
 import numpy as np
-
+"""
 a = np.array([1, 2, 3])
 b = np.array([4, 5, 6])
 
@@ -15,9 +15,14 @@ print(np.column_stack([a, b]))
 a = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])
 
 print(np.hsplit(a, 2))
+#[array([[1, 2],
+#        [5, 6]]),
+# array([[3, 4],
+#        [7, 8]])]
 
 print(np.vsplit(a, 2))
-
+# [array([[1, 2, 3, 4]]),
+#  array([[5, 6, 7, 8]])]
 
 
 
@@ -37,5 +42,15 @@ print(np.vsplit(a, 2))
 # print()
 # # 지수함수
 # print(np.exp(a))
+"""
 
+a = np.array([[1, 2, 3], [1, 2, 3], [1, 2, 3]])
+b = np.array([[1], [2], [3]])
 
+print(a.shape) # (3,)
+print(b.shape) # (3, 1)
+
+print(a + b)
+# [[2 3 4]
+#  [3 4 5]
+#  [4 5 6]]
