@@ -10,27 +10,30 @@ say_hello(2000, "임유빈") # 2000이 위의 born으로 들어간다.
 # 두개면 꼭 두개가 들어가야 한다.
 # 두갠데 하나만 넣으면 오류남.
 say_hello(2001, "혜린") # 입력값만있고 결과값은 없는 함수이다..
-
 # 곱셈 함수
 
-def gugudan(dan, end): # 1. 함수 정의
-    print(f"{dan}단")  # 함수 만들기
-    for i in range(1, end + 1): # 속도도 굉장히 빠르다.
+def gugudan(dan, end):                                          # 1. 함수 정의
+    print(f"{dan}단")                                             # 함수 만들기
+    for i in range(1, end + 1):                                # 속도도 굉장히 빠르다.
         print(f"{dan} x {i} = {dan * i}")
 
 gugudan(4, 20)
 
-
+"""
 # 결과값이 있는 함수?
 # return이 있어야 한다.
+
+
 def calc_sum(num1, num2):
     total = 0
     for i in range(num1, num2 + 1):
         total += i
-    return total # return 보내고싶은 값을 써주면 된다.
+    # return 보내고싶은 값을 써주면 된다.
+    return total
 
-# return을 받는 애가 필요하다.
-result = calc_sum(1, 20) #그래서 변수로 받아줘야된다.
+
+ # return을 받는 애가 필요하다.
+result = calc_sum(1, 20)  # 그래서 변수로 받아줘야된다.
 print(result)
 
 
@@ -38,17 +41,22 @@ print(result)
 def fruits():
     return ['사과', '바나나', '복숭아']
 
+
 print(fruits())
+
 
 def students():
     return {
-        "name" : "홍길동",
-        "age" : 20,
-        "major" : "컴퓨터공학"
+        "name": "홍길동",
+        "age": 20,
+        "major": "컴퓨터공학"
     }
+
+
 print(students())
 
 
+"""
 # 실습1
 
 def multi_or_sum(a, b):
@@ -78,16 +86,20 @@ print(f"상품2 가격: {result2}원")
 
 # 왠만해서는 리턴하는 습관을 들이자.
 
+"""
 
 # 함수 매개변수로 리스트 전달
-def times(nums):
-    return [i ** 2 for i in nums]
 # 리스트 내포를 사용하는게 빠르고 간단하다.
 
-number = [2 ,3 ,6 ,9 ]
-print(times(number))
-# 새로운 리스트로 전달된다.
 
+def times(nums):
+    return [i ** 2 for i in nums]
+
+
+number = [2, 3, 6, 9]
+print(times(number))
+
+# 새로운 리스트로 전달된다.
 
 # 실습3. 자판기 프로그램 함수화
 # 중복된 코드를 함수화 하는 것이다.
@@ -155,4 +167,3 @@ while True:
     else:
         print("잘못입력하셨습니다.")
         print()
-"""
