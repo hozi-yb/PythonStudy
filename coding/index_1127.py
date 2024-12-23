@@ -13,20 +13,20 @@ weather_data = [
 
 def avg_temperatures(weather_data):
     city = input("도시 이름을 입력하세요: ")
-    total = 0
-    count = 0
-    for data in weather_data:
-        if data[1] == city:
-            total += data[2]
-            count += 1
-    return city, total / count
+    # total = 0
+    # count = 0
+    # for data in weather_data:
+    #     if data[1] == city:
+    #         total += data[2]
+    #         count += 1
+    # return city, total / count
 
-    # temp = filter(lambda x: x[1] == city,  weather_data) # 도시 추출
-    # temperatures = list(map(lambda x : x[2], temp)) # 기온 추출
-    # if not temperatures:
-    #     return city, None
-    # else:
-    #     return city, sum(temperatures) / len(temperatures)
+    temp = filter(lambda x: x[1] == city,  weather_data) # 도시 추출
+    temperatures = list(map(lambda x : x[2], temp)) # 기온 추출
+    if not temperatures:
+        return city, None
+    else:
+        return city, sum(temperatures) / len(temperatures)
 
 # 최고/최저 기온함수
 
@@ -69,8 +69,7 @@ def add_weather(weather_data):
 def all_data(weather_data):
     print("\n현재 저장된 날씨 데이터:")
     for data in weather_data:
-        print(f"날짜: {data[0]}, 도시: {data[1]}, 평균기온: {
-              data[2]}℃ , 강수량: {data[3]}mm")
+        print(f"날짜: {data[0]}, 도시: {data[1]}, 평균기온: {data[2]}℃ , 강수량: {data[3]}mm")
 
 
 def main_program():

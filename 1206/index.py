@@ -69,6 +69,8 @@ result = pd.DataFrame({
 # print(result.dtypes)
 # print(result['철수'])
 # print(result[['철수']]) # 키값까지 같이 오게하려면 2차원으로 부르면 된다.
+"""
+
 data = {
     'Name' : ["홍길동", '임꺽정', '성춘향'],
     'Age' : [25, 30, 27],
@@ -81,9 +83,11 @@ print(df)
 # print(df.loc['b', 'Age']) # 30
 # print(df.loc['a' : 'c', 'Name' : 'Age'])
 # print(df.loc[df['Age'] >= 30])
+# print(df.loc[~df['Age'] >= 30]) # 부정연산자 ~
 # print(df.loc[:, ['Name']]) # : 콜론이 전부라는 뜻
 # print(df.loc['a',:]) # a행에 있는 모든걸 가져와라
-
+# pandas에선 부정연산자는 ~로 쓴다.*************************************************************************
+"""
 # 숫자로 접근
 # print(df.iloc[1])
 # print(df.iloc[1,1])
