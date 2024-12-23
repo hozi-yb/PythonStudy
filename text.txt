@@ -1,0 +1,20 @@
+https://www.data.go.kr/data/15065269/fileData.do
+한국 전력 거래소_지역별 시간별 태양광 및 풍력 발전량 CSV, JSON
+
+https://data.kma.go.kr/data/weatherResourceMap/selectWeatherResourceMapSla.do
+태양광자원지도 netCDF??
+
+
+https://s-space.snu.ac.kr/handle/10371/193495
+태양광 발전량 예측 AI알고리즘 연구??? 서울대
+
+https://bd.kma.go.kr/kma2020/fs/energyInfo.do?pageNum=5&menuCd=F050700010
+기상기후 빅데이터 분석 플랫폼 날씨마루
+태양광 발전량 예측
+태양광 발전량 시뮬
+동적크롤링 자료
+
+
+일사량이 많은곳, 이미 생산하고 있는 발전량, 
+태양광 에너지 생산을 어느곳에서 하는것이 가장 효과적인가?
+전기 보관, 운송 등..

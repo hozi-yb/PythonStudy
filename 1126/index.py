@@ -26,23 +26,29 @@ def price_sum(price):
 print(price_sum(1000))
 
 # 전역변수 값 변경
+
 x = 0
 
-def oneup(): # 지역변수에서 전역변수의 값을 수정할 수 없다.
-    global x # global이라는 키워드를 이용해서 x값을 변경할 수 있다.
+def oneup():  
+    global x              # 지역변수에서 전역변수의 값을 수정할 수 없다.# global이라는 키워드를 이용해서 x값을 변경할 수 있다.
     x += 1
     return x
 print(oneup())
+
+
 print(oneup())
 print(oneup())
 
+'''
 # 기본 매개변수
-def pr_str(text = "안녕하세요.", count = 1): # 기본매개변수.
-    for _ in range(count): # 변수를 선언해야되는데, 안쓰는 경우 _(언더바) 처리한다.
+'''
+def pr_str(text="안녕하세요.", count):  # 기본매개변수.
+    for _ in range(count):  # 변수를 선언해야되는데, 안쓰는 경우 _(언더바) 처리한다.
         print(text)
 
+
 pr_str()
-pr_str("hello", 5)
+pr_str(5)
 # 순서가 중요하다.
 # 순서가 중요한 이유 : 쓸 때 앞 변수를 무조건 먼저 사용해줘야한다.
 # text그냥 쓰고 카운트만 바꿀 수 없기 때문
@@ -56,31 +62,42 @@ intro("홍길동", 23, "서울")
 intro(city="서울", name = "임꺽정", age=25) # 순서에 상관없이
 intro("홍길동", age=20, city="부산") # 위치 매개변수는 무조건 앞에!!
 # 그냥 오류남
-
+'''
+'''
 # 가변 매개변수
+
+
 def calc_avg(*args):
     total = 0
-    for i in args: # 쓸 땐 그대로 쓰먼 된다. *없이
+    for i in args:                                          # 쓸 땐 그대로 쓰먼 된다. *없이
         total += i
         avg = total / len(args)
     return avg
 
-print(calc_avg(1,2,3,4,5,6,7,8))  # 리스트를 쓸 순 없나? 해보기
+
+print(calc_avg(1, 2, 3, 4, 5, 6, 7, 10))
 
 
-def text_def(a,b,*args): # 고정이 무조건 앞에 있어야 한다.
-    # 나머지 값이 가변 매개변수에 저장된다.
+# 고정이 무조건 앞에 있어야 한다.  # 나머지 값이 가변 매개변수에 저장된다.
+def text_def(a, b, *args):
+
     print("text : ", a)
-    print("b : ",b)
-    print("args : ",args)
+    print("b : ", b)
+    print("args : ", args)
 
-text_def("hi", 1,2,3,4,5)
 
-def intro(**kwargs):
+text_def("hi", 1, 2, 3, 4, 5)
+'''
+
+'''
+
+def intro(*args, **kwargs):
     for key, value in kwargs.items():
         print(f"{key} : {value}")
+    print(f"나이는 {args[0] - args[1]}")
 
-intro(name = "홍길동", age = 20, city = "서울", gender = "남자")
+
+intro(2024, 1980, name="홍길동", city="서울", gender="남자")
 
 # 내장함수
 # abs(절대값) - 절대값을 구하는 내장함수
@@ -202,7 +219,8 @@ def fibonacci(i):
         return fibonacci(i-1) + fibonacci(i-2) 
 
 print(fibonacci(6)) # 시간복잡도. 로 보면 좋은 방법은 아니다.
-
+'''
+'''
 # 람다식 굉장히 많이씀
 
 # 일반함수
@@ -222,6 +240,7 @@ print((lambda x : x+1)(1))
 square = lambda x : x**2
 print(square(4))
 print((lambda x : x**2)(4))
+
 #매개변수가 두개인 것.
 minus = lambda x,y : x - y
 print(minus(10,2))
@@ -246,11 +265,12 @@ call(hello2) # 람다 함수
 
 numbers = [2, 4, 6, 8]
 squared = map(lambda x: x ** 3, numbers)
-print(list(squared))
+print(list(squared))  # [8, 64, 216, 512]
+'''
 
-numbers = [1,2,3,4,5,6,7,8,9]
-print(list(filter(lambda x : x % 2 == 0, numbers)))
-
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(filter(lambda x: x % 2 == 0, numbers))  # [2, 4, 6, 8]
+'''
 
 def count(num):
  
@@ -261,10 +281,11 @@ num = 5
 lists, counts = count(num)
 print(f"{num}의 배수 : {lists}")
 print(f"{num}의 배수의 개수 : {counts}")
+
+
 '''
 
 # 실습6. 함수 종합 프로그래밍
-
 weather_data = [
     ["2024-11-20", "서울", 15.2, 0.0],
     ["2024-11-20", "부산", 18.4, 0.0],
@@ -274,14 +295,18 @@ weather_data = [
     ["2024-11-22", "부산", 12.0, 0.0]
 ]
 
+
 def data(i):
     return weather_data[i]
+
+
 def data2():
     filter_city = list(filter(lambda x: x[1] == city, weather_data))
 
+
 while True:
     print("[날씨 데이터 분석 프로그램]\n")
-    print("1. 평균 기온 계산\n2. 최고/최저 기온 찾기\n3. 강수량 분석\n4. 날씨데이터 추가\n5. 전체 데이터 출력\n6. 종료(임유빈)")
+    print("1. 평균 기온 계산\n2. 최고/최저 기온 찾기\n3. 강수량 분석\n4. 날씨데이터 추가\n5. 전체 데이터 출력\n6. 종료")
     number = int(input("원하는 기능의 번호를 입력하세요. : "))
 
     if number == 6:
@@ -289,7 +314,7 @@ while True:
         break
 
     elif number == 1:
-        city = input("도시 이름을 입력하세요: ")    
+        city = input("도시 이름을 입력하세요: ")
         filter_city = list(filter(lambda x: x[1] == city, weather_data))
         total = 0
         for i in range(len(filter_city)):
@@ -298,28 +323,29 @@ while True:
         print(f"{city}의 평균기온 : {avg:.2f}°C")
         print()
 
-    
     elif number == 2:
-        city = input("도시 이름을 입력하세요: ")    
-        filter_city = list(filter(lambda x: x[1] == city, weather_data)) # 최고/최저 기온 찾기
+        city = input("도시 이름을 입력하세요: ")
+        filter_city = list(
+            filter(lambda x: x[1] == city, weather_data))  # 최고/최저 기온 찾기
         temp_list = []
         for i in range(len(filter_city)):
             temp_list.append(filter_city[i][2])
         max_temp = max(temp_list)
         print(max_temp)
         print()
-    
+
     elif number == 3:
-        city = input("도시 이름을 입력하세요: ")    
-        filter_city = list(filter(lambda x: x[1] == city, weather_data)) # 강수량 분석
+        city = input("도시 이름을 입력하세요: ")
+        filter_city = list(
+            filter(lambda x: x[1] == city, weather_data))  # 강수량 분석
         rain_list = []
         for i in range(len(filter_city)):
             rain_list.append(filter_city[i][3])
         total_rain = sum(rain_list)
         print(f"{city}의 총 강수량은 {total_rain}mm")
         print()
-    
-    elif number == 4: # 날씨 데이터 추가
+
+    elif number == 4:  # 날씨 데이터 추가
         date = input("날짜를 입력하세요 (YYYY-MM-DD): ")
         city = input("도시를 입력하세요: ")
         temp = input("평균 기온을 입력하세요 (°C): ")
@@ -328,21 +354,11 @@ while True:
         print(f"{city}의 날씨 데이터가 추가되었습니다.")
         print()
 
-    elif number == 5: # 전체 데이터 출력
+    elif number == 5:  # 전체 데이터 출력
         for i in range(len(weather_data)):
-            print(f"날씨 : {weather_data[i][0]}, 도시 : {weather_data[i][1]}, 평균 기온 : {weather_data[i][2]}, 강수량 : {weather_data[i][3]}")
+            print(f"날씨 : {weather_data[i][0]}, 도시 : {weather_data[i][1]}, 평균 기온 : {
+                  weather_data[i][2]}, 강수량 : {weather_data[i][3]}")
         print()
-    
+"""
 
-               
-            
-
-
-
-    
-                    
-
-
-
-
-
+"""
